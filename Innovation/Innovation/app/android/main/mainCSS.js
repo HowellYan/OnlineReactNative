@@ -1,8 +1,10 @@
 'use strict';
 import React, { Component } from 'react';
 import {
-	StyleSheet
+	StyleSheet,
+  Platform
 } from 'react-native';
+
 
 const styles = StyleSheet.create({
 	 list: {
@@ -34,5 +36,21 @@ const styles = StyleSheet.create({
     fontWeight: 'bold'
   }
 });
+if(Platform.OS === 'android'){
 
+} else {
+  styles.row = {
+        justifyContent: 'center',
+        padding: 0,
+        margin: 0,
+        width: 100,
+        height: 100,
+        backgroundColor: '#F6F6F6',
+        alignItems: 'center',
+        borderWidth: 1,
+        borderRadius: 0,
+        borderColor: '#CCC'
+  }
+
+}
 module.exports = styles;

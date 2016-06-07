@@ -11,6 +11,7 @@ import {
   	BackAndroid,
   	StyleSheet,
   	Navigator,
+  	InteractionManager,
   	View,
   	Text}
 from 'react-native';
@@ -24,6 +25,17 @@ const defaultRoute = {
 };
 
 class LoginMain extends Component {
+ constructor(props, context) {
+    super(props, context);
+    this.state = {renderPlaceholderOnly: true};
+  }
+
+  componentDidMount() {
+    InteractionManager.runAfterInteractions(() => {
+      this.setState({renderPlaceholderOnly: false});
+    });
+  }
+
   	_renderScene(route, navigator) {
 		_navigator = navigator;
 	    let Component = route.component;
@@ -43,6 +55,7 @@ class LoginMain extends Component {
 	        fontSize: 18, color: '#FFFFFF', fontWeight: '400'
 	      }
 	    }
+	    
 		var routeMapper = {
 	      LeftButton(route, navigator, index, navState) {
 	        if(index > 0) {

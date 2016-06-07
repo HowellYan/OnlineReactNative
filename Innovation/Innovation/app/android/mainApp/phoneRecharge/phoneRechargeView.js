@@ -13,19 +13,34 @@ import {
   TouchableHighlight,
   Alert,
   ScrollView,
+  Platform,
   BackAndroid,
   Navigator,
   View
 } from 'react-native';
 var thisObj = null;
+var styles = null;
+if (Platform.OS === 'android') {
+    styles = require('../../../lib/android/css/pageView');
+} else {
+    styles = require('../../../lib/ios/css/pageView');
+}
 
-var ScrollableTabView = require('react-native-scrollable-tab-view');
+import ScrollableTabView, { ScrollableTabBar } from 'react-native-scrollable-tab-view';
+var reqHttp = require('../../../lib/reqHttp');
+var phoneRechargeJS = require('./phoneRechargeJS');
+var PhoneBillView =  require('./PhoneBillView');
+
+var phoneNum;
 
 class phoneRechargeView extends Component {
+
+
+
   render() {
       thisObj = this;
       var {navigator,title,userIDVer} = this.props;
-      BackAndroid.addEventListener('hardwareBackPress', function() {
+          BackAndroid.addEventListener('hardwareBackPress', function() {
             if (navigator && navigator.getCurrentRoutes().length > 1) {
               navigator.pop();
               return true;
@@ -33,10 +48,12 @@ class phoneRechargeView extends Component {
             return false;
           });
     return (
-      <ScrollableTabView>
-        <View tabLabel="充话费"><Text>充话费</Text></View>
-        <View tabLabel="充流量"><Text>充流量</Text></View>
-      </ScrollableTabView>
+        <ScrollableTabView initialPage={0}>
+          <PhoneBillView tabLabel="充话费"></PhoneBillView>
+          <View tabLabel="充流量">
+            <Text>充流量</Text>
+          </View>
+        </ScrollableTabView>
     );
   }
 }

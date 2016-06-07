@@ -11,6 +11,7 @@ import {
   Image,
   ToastAndroid,
   BackAndroid,
+  RefreshControl,
   TouchableHighlight,
   Alert,
   Navigator,
@@ -33,7 +34,7 @@ class broadbandView extends Component {
           });
     return (
        <ScrollableTabView>
-        <View tabLabel="固话"><Text>固话1 </Text></View>
+        <View tabLabel="固话"><Text>固话1  </Text></View>
         <View tabLabel="宽带"><Text>宽带1   </Text></View>
       </ScrollableTabView>
     );

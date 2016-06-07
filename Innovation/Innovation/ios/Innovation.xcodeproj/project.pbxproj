@@ -21,6 +21,20 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
+		3A1583EE1D014365000F632F /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A1583ED1D014365000F632F /* User.m */; };
+		3A1584051D0162BE000F632F /* GetStringController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A1584041D0162BE000F632F /* GetStringController.m */; };
+		3A15840B1D0178AD000F632F /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A1584091D0178AD000F632F /* GTMBase64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		3A1584101D018A6D000F632F /* NSString+ThreeDES.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A15840F1D018A6D000F632F /* NSString+ThreeDES.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		3A1584161D019847000F632F /* NSData+AES.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A1584131D019847000F632F /* NSData+AES.m */; };
+		3A1584171D019847000F632F /* NSString+AES.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A1584151D019847000F632F /* NSString+AES.m */; };
+		3A9B31E51D0520DB00136A76 /* PasswordControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A9B31E41D0520DB00136A76 /* PasswordControl.m */; };
+		3AA63AF81D00160A00FE00F2 /* NetConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA63AF71D00160A00FE00F2 /* NetConstants.m */; };
+		3AA63AFB1D00166D00FE00F2 /* RequestParamsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA63AFA1D00166D00FE00F2 /* RequestParamsController.m */; };
+		3AA63B001D0021A700FE00F2 /* MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA63AFF1D0021A700FE00F2 /* MD5.m */; };
+		3AA63B031D00222400FE00F2 /* SignControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA63B021D00222400FE00F2 /* SignControl.m */; };
+		3AA63B061D002A6000FE00F2 /* RequstParamtersControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA63B051D002A6000FE00F2 /* RequstParamtersControl.m */; };
+		3AA63B091D002AD700FE00F2 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA63B081D002AD700FE00F2 /* Utils.m */; };
+		3AA63B0E1D0033FE00FE00F2 /* RequestParams.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA63B0D1D0033FE00FE00F2 /* RequestParams.m */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 /* End PBXBuildFile section */
 
@@ -124,6 +138,35 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Innovation/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Innovation/main.m; sourceTree = "<group>"; };
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
+		3A1583EC1D014365000F632F /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = Innovation/Bean/User.h; sourceTree = "<group>"; };
+		3A1583ED1D014365000F632F /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = Innovation/Bean/User.m; sourceTree = "<group>"; };
+		3A1584031D0162A8000F632F /* GetStringController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GetStringController.h; path = Innovation/BridgeModule/GetStringController.h; sourceTree = "<group>"; };
+		3A1584041D0162BE000F632F /* GetStringController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GetStringController.m; path = Innovation/BridgeModule/GetStringController.m; sourceTree = "<group>"; };
+		3A1584081D0178AD000F632F /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTMBase64.h; path = Innovation/Vectors/GTMBase64/GTMBase64.h; sourceTree = "<group>"; };
+		3A1584091D0178AD000F632F /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTMBase64.m; path = Innovation/Vectors/GTMBase64/GTMBase64.m; sourceTree = "<group>"; };
+		3A15840A1D0178AD000F632F /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTMDefines.h; path = Innovation/Vectors/GTMBase64/GTMDefines.h; sourceTree = "<group>"; };
+		3A15840E1D018A6D000F632F /* NSString+ThreeDES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+ThreeDES.h"; path = "Innovation/Value/encryption/NSString+ThreeDES.h"; sourceTree = "<group>"; };
+		3A15840F1D018A6D000F632F /* NSString+ThreeDES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+ThreeDES.m"; path = "Innovation/Value/encryption/NSString+ThreeDES.m"; sourceTree = "<group>"; };
+		3A1584121D019847000F632F /* NSData+AES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+AES.h"; path = "Innovation/Vectors/AES/NSData+AES.h"; sourceTree = "<group>"; };
+		3A1584131D019847000F632F /* NSData+AES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+AES.m"; path = "Innovation/Vectors/AES/NSData+AES.m"; sourceTree = "<group>"; };
+		3A1584141D019847000F632F /* NSString+AES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+AES.h"; path = "Innovation/Vectors/AES/NSString+AES.h"; sourceTree = "<group>"; };
+		3A1584151D019847000F632F /* NSString+AES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+AES.m"; path = "Innovation/Vectors/AES/NSString+AES.m"; sourceTree = "<group>"; };
+		3A9B31E31D0520DB00136A76 /* PasswordControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PasswordControl.h; path = Innovation/Helpers/PasswordControl.h; sourceTree = "<group>"; };
+		3A9B31E41D0520DB00136A76 /* PasswordControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PasswordControl.m; path = Innovation/Helpers/PasswordControl.m; sourceTree = "<group>"; };
+		3AA63AF71D00160A00FE00F2 /* NetConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NetConstants.m; path = Innovation/net/NetConstants.m; sourceTree = "<group>"; };
+		3AA63AF91D00166D00FE00F2 /* RequestParamsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RequestParamsController.h; path = Innovation/BridgeModule/RequestParamsController.h; sourceTree = "<group>"; };
+		3AA63AFA1D00166D00FE00F2 /* RequestParamsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RequestParamsController.m; path = Innovation/BridgeModule/RequestParamsController.m; sourceTree = "<group>"; };
+		3AA63AFC1D0017D700FE00F2 /* NetConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NetConstants.h; path = Innovation/net/NetConstants.h; sourceTree = "<group>"; };
+		3AA63AFE1D0021A700FE00F2 /* MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MD5.h; path = Innovation/Helpers/MD5.h; sourceTree = "<group>"; };
+		3AA63AFF1D0021A700FE00F2 /* MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MD5.m; path = Innovation/Helpers/MD5.m; sourceTree = "<group>"; };
+		3AA63B011D00222400FE00F2 /* SignControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignControl.h; path = Innovation/Helpers/SignControl.h; sourceTree = "<group>"; };
+		3AA63B021D00222400FE00F2 /* SignControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignControl.m; path = Innovation/Helpers/SignControl.m; sourceTree = "<group>"; };
+		3AA63B041D002A6000FE00F2 /* RequstParamtersControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RequstParamtersControl.h; path = Innovation/Helpers/RequstParamtersControl.h; sourceTree = "<group>"; };
+		3AA63B051D002A6000FE00F2 /* RequstParamtersControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RequstParamtersControl.m; path = Innovation/Helpers/RequstParamtersControl.m; sourceTree = "<group>"; };
+		3AA63B071D002AD700FE00F2 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Utils.h; path = Innovation/Helpers/Utils.h; sourceTree = "<group>"; };
+		3AA63B081D002AD700FE00F2 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Utils.m; path = Innovation/Helpers/Utils.m; sourceTree = "<group>"; };
+		3AA63B0C1D0033ED00FE00F2 /* RequestParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RequestParams.h; path = Innovation/Net/RequestParams.h; sourceTree = "<group>"; };
+		3AA63B0D1D0033FE00FE00F2 /* RequestParams.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RequestParams.m; path = Innovation/Net/RequestParams.m; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -232,6 +275,12 @@
 		13B07FAE1A68108700A75B9A /* Innovation */ = {
 			isa = PBXGroup;
 			children = (
+				3A15840C1D018A58000F632F /* Value */,
+				3A1584061D017802000F632F /* Vectors */,
+				3A1583E11D014348000F632F /* Bean */,
+				3AA63AFD1D00211F00FE00F2 /* Helpers */,
+				3AA63AF61D0015EC00FE00F2 /* Net */,
+				3AA63AE21CFFD71000FE00F2 /* BridgeModule */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -249,6 +298,101 @@
 				146834041AC3E56700842450 /* libReact.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		3A1583E11D014348000F632F /* Bean */ = {
+			isa = PBXGroup;
+			children = (
+				3A1583EC1D014365000F632F /* User.h */,
+				3A1583ED1D014365000F632F /* User.m */,
+			);
+			name = Bean;
+			sourceTree = "<group>";
+		};
+		3A1584061D017802000F632F /* Vectors */ = {
+			isa = PBXGroup;
+			children = (
+				3A1584111D01981C000F632F /* AES */,
+				3A1584071D01786D000F632F /* GTMBase64 */,
+			);
+			name = Vectors;
+			sourceTree = "<group>";
+		};
+		3A1584071D01786D000F632F /* GTMBase64 */ = {
+			isa = PBXGroup;
+			children = (
+				3A1584081D0178AD000F632F /* GTMBase64.h */,
+				3A1584091D0178AD000F632F /* GTMBase64.m */,
+				3A15840A1D0178AD000F632F /* GTMDefines.h */,
+			);
+			name = GTMBase64;
+			sourceTree = "<group>";
+		};
+		3A15840C1D018A58000F632F /* Value */ = {
+			isa = PBXGroup;
+			children = (
+				3A15840D1D018A5E000F632F /* encryption */,
+			);
+			name = Value;
+			sourceTree = "<group>";
+		};
+		3A15840D1D018A5E000F632F /* encryption */ = {
+			isa = PBXGroup;
+			children = (
+				3A15840E1D018A6D000F632F /* NSString+ThreeDES.h */,
+				3A15840F1D018A6D000F632F /* NSString+ThreeDES.m */,
+			);
+			name = encryption;
+			sourceTree = "<group>";
+		};
+		3A1584111D01981C000F632F /* AES */ = {
+			isa = PBXGroup;
+			children = (
+				3A1584121D019847000F632F /* NSData+AES.h */,
+				3A1584131D019847000F632F /* NSData+AES.m */,
+				3A1584141D019847000F632F /* NSString+AES.h */,
+				3A1584151D019847000F632F /* NSString+AES.m */,
+			);
+			name = AES;
+			sourceTree = "<group>";
+		};
+		3AA63AE21CFFD71000FE00F2 /* BridgeModule */ = {
+			isa = PBXGroup;
+			children = (
+				3AA63AF91D00166D00FE00F2 /* RequestParamsController.h */,
+				3AA63AFA1D00166D00FE00F2 /* RequestParamsController.m */,
+				3A1584031D0162A8000F632F /* GetStringController.h */,
+				3A1584041D0162BE000F632F /* GetStringController.m */,
+			);
+			name = BridgeModule;
+			sourceTree = "<group>";
+		};
+		3AA63AF61D0015EC00FE00F2 /* Net */ = {
+			isa = PBXGroup;
+			children = (
+				3AA63AF71D00160A00FE00F2 /* NetConstants.m */,
+				3AA63AFC1D0017D700FE00F2 /* NetConstants.h */,
+				3AA63B0C1D0033ED00FE00F2 /* RequestParams.h */,
+				3AA63B0D1D0033FE00FE00F2 /* RequestParams.m */,
+			);
+			name = Net;
+			sourceTree = "<group>";
+		};
+		3AA63AFD1D00211F00FE00F2 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				3A9B31E31D0520DB00136A76 /* PasswordControl.h */,
+				3A9B31E41D0520DB00136A76 /* PasswordControl.m */,
+				3AA63B071D002AD700FE00F2 /* Utils.h */,
+				3AA63B081D002AD700FE00F2 /* Utils.m */,
+				3AA63B041D002A6000FE00F2 /* RequstParamtersControl.h */,
+				3AA63B051D002A6000FE00F2 /* RequstParamtersControl.m */,
+				3AA63B011D00222400FE00F2 /* SignControl.h */,
+				3AA63B021D00222400FE00F2 /* SignControl.m */,
+				3AA63AFE1D0021A700FE00F2 /* MD5.h */,
+				3AA63AFF1D0021A700FE00F2 /* MD5.m */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 		78C398B11ACF4ADC00677621 /* Products */ = {
@@ -545,8 +689,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A9B31E51D0520DB00136A76 /* PasswordControl.m in Sources */,
+				3A1584161D019847000F632F /* NSData+AES.m in Sources */,
+				3A1583EE1D014365000F632F /* User.m in Sources */,
+				3AA63B031D00222400FE00F2 /* SignControl.m in Sources */,
+				3AA63B061D002A6000FE00F2 /* RequstParamtersControl.m in Sources */,
+				3AA63AF81D00160A00FE00F2 /* NetConstants.m in Sources */,
+				3A1584101D018A6D000F632F /* NSString+ThreeDES.m in Sources */,
+				3AA63B091D002AD700FE00F2 /* Utils.m in Sources */,
+				3A1584171D019847000F632F /* NSString+AES.m in Sources */,
+				3AA63AFB1D00166D00FE00F2 /* RequestParamsController.m in Sources */,
+				3AA63B001D0021A700FE00F2 /* MD5.m in Sources */,
+				3A15840B1D0178AD000F632F /* GTMBase64.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				3A1584051D0162BE000F632F /* GetStringController.m in Sources */,
+				3AA63B0E1D0033FE00FE00F2 /* RequestParams.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
