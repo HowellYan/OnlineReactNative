@@ -2,7 +2,6 @@ package com.innovation;
 
 
 import android.os.Bundle;
-import android.util.Log;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactInstanceManager;
@@ -16,11 +15,8 @@ import com.facebook.react.shell.MainReactPackage;
 import com.innovation.app.PluginReactPackage;
 import com.innovation.util.UpdateApp;
 
-
-import java.io.File;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Locale;
 
 
 public class MainActivity extends ReactActivity {

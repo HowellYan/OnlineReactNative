@@ -24,9 +24,7 @@ public class DownloadBundleFileMD5 {
 
             if(serverMD5Str.equals(downloadFileMd5)){
                 isOK = true;
-                Log.i("downloadBundleFileMD5","Bundle File 校验成功");
-            } else {
-                Log.i("downloadBundleFileMD5","Bundle File 校验失败");
+                Log.i("downloadBundleFileMD5","校验成功20160607");
             }
         } catch (IOException e) {
             e.printStackTrace();

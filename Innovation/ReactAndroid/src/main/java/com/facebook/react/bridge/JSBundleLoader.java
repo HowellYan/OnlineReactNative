@@ -10,7 +10,6 @@
 package com.facebook.react.bridge;
 
 import android.content.Context;
-import android.util.Log;
 
 /**
  * A class that stores JS bundle information and allows {@link CatalystInstance} to load a correct
