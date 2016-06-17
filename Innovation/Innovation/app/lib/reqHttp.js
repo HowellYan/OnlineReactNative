@@ -44,7 +44,7 @@ var getRandNum = function(isNewFlow, callBack) {
 var setServiceParams = function(settings) {
 	var interfaceName = settings['interfaceName'];
 	var flagSign = settings['flagSign'];
-    requestParams.setCPSServiceParams(interfaceName, settings['readableMap'], flagSign, settings.actionCallback);
+    requestParams.setCPSServiceParams(interfaceName, settings['readableMap'], flagSign ,settings.actionCallback);
 };
 
 /**

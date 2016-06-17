@@ -35,6 +35,8 @@
   
   jsCodeLocation = [NSURL URLWithString:@"http://localhost:8081/app/android/Login.android.bundle?platform=ios&dev=true&hot=true&minify=true"];
 
+  //jsCodeLocation = [NSURL URLWithString:@"http://172.26.13.227:8081/app/android/Login.android.bundle?platform=ios&dev=true&hot=true&minify=true"];
+  
   /**
    * OPTION 2
    * Load from pre-bundled file on disk. The static bundle is automatically

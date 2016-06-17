@@ -77,7 +77,7 @@ public class MainActivity extends ReactActivity {
     protected String getJSMainModuleName() {
 
         //DevUrl = "172.26.13.227:8081";//翼支付
-        DevUrl = "10.0.3.2:8081";//本地
+         DevUrl = "10.0.3.2:8081";//本地
         AndroidInfoHelpers.GENYMOTION_LOCALHOST=DevUrl;
         AndroidInfoHelpers.EMULATOR_LOCALHOST=DevUrl;
         AndroidInfoHelpers.DEVICE_LOCALHOST=DevUrl;

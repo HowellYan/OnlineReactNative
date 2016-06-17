@@ -71,6 +71,7 @@ class LoginConfirmation extends React.Component {
             if (paramsLogin['isNewFlow'] == 'Y') {
                 params['randomCodeIndex'] = paramsLogin['randomCodeIndex'];
             }
+            AsyncStorage.setItem("staffCode", userID);
              //请求回调
             var ServiceCallBack = function(Params) {
                 if (Params['code'] == global.RES.SUCCESS) {

@@ -70,7 +70,7 @@ public class RequestParams {
         request.put("model", android.os.Build.MODEL);
         request.put("kernelVersion", Util.getLinuxCoreVer());
         request.put("clientVersion", Util.getAppVersionName(context));
-        request.put("softwareType", "“翼支付+”");
+        request.put("softwareType", "交费易");
         request.put("systemVersion", android.os.Build.VERSION.RELEASE);
         request.put("systemType", "Android");
         request.put("bisChannel", "01");
@@ -98,6 +98,7 @@ public class RequestParams {
 
             request.put("sign", SignUtil.getSign(requestSon, Token));
         }
+        request.put("signVer", "2");
         return request;
     }
 

@@ -13,10 +13,13 @@ const styles = StyleSheet.create({
   },
 
   touchable : {
-    borderRadius:30,
+    height: 45,
+    marginLeft:16,
+    marginRight:16,
+    borderRadius:4,
+    marginTop: 10,
     backgroundColor:'#ff7e00',
-    borderColor:'#ff7e00',
-    width:300
+    borderColor:'#ff7e00'
   },
   container: {
     flex: 1,
@@ -28,13 +31,12 @@ const styles = StyleSheet.create({
   	flexDirection:'row'
   },
   buttonTxt: {
-    borderRadius:30,
     fontSize: 20,
     textAlign: 'center',
     marginTop: 10,
     marginBottom: 10,
-    color:'#FFFFFF',
-    width:300
+    color:'#FFFFFF'
+
   },
   verifyCode:{
   	height: 50,

@@ -19,17 +19,21 @@ import {
   View
 } from 'react-native';
 var thisObj = null;
-var styles = null;
+var styles = null,phoneRechargeStyles = null;
 if (Platform.OS === 'android') {
     styles = require('../../../lib/android/css/pageView');
 } else {
     styles = require('../../../lib/ios/css/pageView');
 }
+phoneRechargeStyles = require('./phoneRechargeCSS');
+
 
 import ScrollableTabView, { ScrollableTabBar } from 'react-native-scrollable-tab-view';
 var reqHttp = require('../../../lib/reqHttp');
 var phoneRechargeJS = require('./phoneRechargeJS');
+
 var PhoneBillView =  require('./PhoneBillView');
+var PhoneCurCapView =  require('./PhoneCurCapView');
 
 var phoneNum;
 
@@ -48,11 +52,9 @@ class phoneRechargeView extends Component {
             return false;
           });
     return (
-        <ScrollableTabView initialPage={0}>
+        <ScrollableTabView initialPage={0} style={phoneRechargeStyles.viewBg}>
           <PhoneBillView tabLabel="充话费"></PhoneBillView>
-          <View tabLabel="充流量">
-            <Text>充流量</Text>
-          </View>
+          <PhoneCurCapView tabLabel="充流量"></PhoneCurCapView>
         </ScrollableTabView>
     );
   }
