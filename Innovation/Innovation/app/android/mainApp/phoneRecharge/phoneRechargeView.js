@@ -27,7 +27,6 @@ if (Platform.OS === 'android') {
 }
 phoneRechargeStyles = require('./phoneRechargeCSS');
 
-
 import ScrollableTabView, { ScrollableTabBar } from 'react-native-scrollable-tab-view';
 var reqHttp = require('../../../lib/reqHttp');
 var phoneRechargeJS = require('./phoneRechargeJS');
@@ -38,9 +37,7 @@ var PhoneCurCapView =  require('./PhoneCurCapView');
 var phoneNum;
 
 class phoneRechargeView extends Component {
-
-
-
+  
   render() {
       thisObj = this;
       var {navigator,title,userIDVer} = this.props;
@@ -53,8 +50,8 @@ class phoneRechargeView extends Component {
           });
     return (
         <ScrollableTabView initialPage={0} style={phoneRechargeStyles.viewBg}>
-          <PhoneBillView tabLabel="充话费"></PhoneBillView>
-          <PhoneCurCapView tabLabel="充流量"></PhoneCurCapView>
+          <PhoneBillView tabLabel="充话费" navigator={this.props.navigator}></PhoneBillView>
+          <PhoneCurCapView tabLabel="充流量" navigator={this.props.navigator}></PhoneCurCapView>
         </ScrollableTabView>
     );
   }

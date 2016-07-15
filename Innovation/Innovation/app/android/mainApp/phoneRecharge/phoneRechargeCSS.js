@@ -5,7 +5,7 @@ import React, {
 
 const styles = StyleSheet.create({
 	viewBg:{
-	    backgroundColor:'#ffffff'
+	    backgroundColor:'#f5f5f5'
 	  },
 	flowRight: {
 	  flexDirection: 'row',
@@ -60,6 +60,71 @@ const styles = StyleSheet.create({
   	fontsize:{ 
     	fontSize:20,
     	color: '#626262'
+  	},
+  	input_Wrap:{
+  		backgroundColor: '#FEFFFF',
+  		borderColor: '#DBDCDC',
+  		borderStyle: 'solid',
+  		borderWidth: 1,
+  		marginLeft:16,
+    	marginRight:16,
+    	marginBottom:12,
+    	marginTop:12,
+    	borderRadius: 4,
+    	height:50
+  	},
+  	phone_input:{
+  		backgroundColor: 'rgba(255,255,255,0)',
+  		paddingBottom:0,
+  	},
+  	phoneadress:{
+  		paddingLeft:20,
+  		marginBottom:12
+  	},
+  	flowListView:{
+  		flex:1,
+  		backgroundColor:'white',
+  		flexDirection: 'row',
+  		alignItems:'center',
+  		height:60,
+  		marginLeft:16,
+  		marginBottom:16,
+  		borderStyle:'solid',
+  		borderWidth:1,
+  		borderColor:'white',
+  		borderRadius:2
+  	},
+  	borderGreen:{
+  		borderStyle:'solid',
+  		borderWidth:1,
+  		borderColor:'#84BB01',
+  		borderRadius:2
+  	},
+  	flowsubview:{
+  		flex:1,
+  		flexDirection:'column',
+  	},
+  	flowtext:{
+  		fontSize: 16,
+  		textAlign:'center',
+  		color:'#333333'
+  	},
+  	listView_warp:{
+  		flex:1,
+  		flexDirection: 'row',
+  		flexWrap:'wrap',
+  	},
+  	btn_clear:{
+  		position:'absolute',
+  		right:15,
+  		top:0,
+  		width:20,
+  		height:50
+  	},
+  	btn_clear_img:{
+  		width:20,
+  		marginTop:3,
+  		resizeMode: 'contain'
   	}
 });
 
