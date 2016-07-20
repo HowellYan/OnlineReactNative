@@ -322,13 +322,17 @@ class PasswordKeyboard extends Component {
     _renderRow(rowData: string, sectionID: number, rowID: number){
     	let wrap = typeof rowData === 'object' ? (<View>{rowData}</View>) : (<Text>{rowData}</Text>);
     	return (
-	      <TouchableHighlight underlayColor={'#999999'} onPress={this._listViewOnPress.bind(this,rowData,rowID)}>
-	      	 <View style={[
+	      <TouchableHighlight 
+	       style={[
 	      	 	styles.keyboardStyle, 
 	      	 	styles.englishWidth, 
 	      	 	this.state.numberKeyboard && styles.numberWidth, 
 	      	 	!this.state.numberKeyboard && rowID == 28 && styles.englishBackspace
-	      	 	]}>
+	      	]}
+	       underlayColor={'#999999'} 
+	       onPress={this._listViewOnPress.bind(this,rowData,rowID)}
+	       >
+	      	 <View>
 	      	  	{wrap}
 	      	 </View>
 	      </TouchableHighlight> 

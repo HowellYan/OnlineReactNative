@@ -82,7 +82,6 @@ const styles = StyleSheet.create({
   		marginBottom:12
   	},
   	flowListView:{
-  		flex:1,
   		backgroundColor:'white',
   		flexDirection: 'row',
   		alignItems:'center',

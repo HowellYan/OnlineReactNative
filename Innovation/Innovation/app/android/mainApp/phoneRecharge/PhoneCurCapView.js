@@ -14,7 +14,6 @@ import {
   Alert,
   Platform,
   ScrollView,
-  Picker,
   BackAndroid,
   ListView,
   Navigator,
@@ -23,6 +22,7 @@ import {
   View
 } from 'react-native';
 import orderView from '../orderView/orderView';
+import finishpage from '../finishpage/finishpage';
 if (Platform.OS === 'android') {
     styles = require('../../../lib/android/css/pageView');
 } else {
@@ -30,6 +30,7 @@ if (Platform.OS === 'android') {
 }
 
 const btn_clear = require('../../../lib/img/btn_clear.png');
+const loading = require('../../../lib/img/fin-loading.gif');
 
 let requestParams = NativeModules.RequestParamsController;
 let getString = NativeModules.GetStringController;
@@ -88,7 +89,8 @@ class PhoneCurCapView extends Component {
 	      phoneadress:'',
           showPhoneadress:false,
           dataSource,
-          rowID:''
+          rowID:'',
+          loading: false
 	    };
 
 	    AsyncStorage.getItem("userInfo", (err, result) => {
@@ -100,10 +102,33 @@ class PhoneCurCapView extends Component {
       	});
   	}
 
+  	_loadingHTML(){
+  		if(this.state.loading){
+  			return(
+  				<View>
+  				  
+  				</View>
+  			)
+  		}else{
+  			return null;
+  		}
+  	}
+
+  	_showLoading(){
+  		this.setState({loading:true});
+  	}
+
+  	_dismissLoading(){
+  		this.setState({loading:false});
+  	}
+
   	//手机归属地查询
   	_textInputChange(phone){
 
 	    if(phone.length===11){ 
+
+	       this._showLoading();
+
 		  //清空数组
 	      this.setState({
 	      	dataSource: this.state.dataSource.cloneWithRows([''])
@@ -132,7 +157,7 @@ class PhoneCurCapView extends Component {
 	      })
 	      .then(response => response.text())
 	      .then(responseText => {
-	          Alert.alert('Alert Title',responseText,[{text: 'OK', onPress: () => console.log('OK Pressed!')}])
+	          this._dismissLoading();
 	          let json = JSON.parse(responseText);
 	          if(json['code']==global.RES.SUCCESS){
 
@@ -176,13 +201,15 @@ class PhoneCurCapView extends Component {
 
   	_renderRow(rowData: string, sectionID: number, rowID: number){
 	    return (
-	      <TouchableHighlight underlayColor={'rgba(255,255,255,0)'} onPress={this._selectChange.bind(this,rowData,rowID)}>
-	      	  <View style={[prCss.flowListView,{width:Dimensions.get('window').width/3-21.3}, rowID == this.state.rowID && prCss.borderGreen]}>
-	      	  	  <View style={prCss.flowsubview}>
-		      	  	  <View><Text style={prCss.flowtext}>{rowData.M}</Text></View>
-		              <View><Text style={[prCss.flowtext,{fontSize:14}]}>{rowData.Y}</Text></View>
-	              </View>
-	      	 </View>
+	      <TouchableHighlight 
+	       style={[prCss.flowListView,{width:Dimensions.get('window').width/3-21.3}, rowID == this.state.rowID && prCss.borderGreen]}
+	       underlayColor={'rgba(255,255,255,0)'} 
+	       onPress={this._selectChange.bind(this,rowData,rowID)}
+	       >
+      	  	  <View style={prCss.flowsubview}>
+	      	  	  <View><Text style={prCss.flowtext}>{rowData.M}</Text></View>
+	              <View><Text style={[prCss.flowtext,{fontSize:14}]}>{rowData.Y}</Text></View>
+              </View>
 	      </TouchableHighlight> 
 	    );
     }
@@ -328,7 +355,7 @@ class PhoneCurCapView extends Component {
 		  		amount = Lang.yuan2fen(amount);
 				const perAmount = json.perAmount*1;
 				const allAmount = json.allamount*1;
-				const alltransaction = json.alltransaction*1;
+				const allTransAction = json.alltransaction*1;
 				if (amount <= perAmount && (amount + allTransAction) <= allAmount) {
 					//	免密
 					order['noPwd'] = false;
@@ -534,8 +561,19 @@ class PhoneCurCapView extends Component {
 
 		  	    order['systemNo'] = json.systemNo;
 
+		  	    let params = {
+					title: '订单详情',
+					phoneNo: this.state.phone,
+					payMoney: order.cost,
+					reward: order['reward'],
+					hadEpt: userInfo.hadEpt,
+					jfy_amount: order['jfy_amount'],
+					tyb_amount: order['tyb_amount'],
+					callback: this._encryptPassword //充值
+				}
+
 		  	    //跳转到订单页面
-				this._gotoPage(orderView, '订单详情');
+				this._gotoPage(orderView, '订单详情', params);
 		    }
 		})
 		.catch(error => {
@@ -547,18 +585,9 @@ class PhoneCurCapView extends Component {
      * params 传给下一个页面的值
      * component 下一个页面的view
      */
-	_gotoPage(component, name){
+	_gotoPage(component, name, params){
 		this.props.navigator.push({
-			params: {
-				title: name,
-				phoneNo: this.state.phone,
-				payMoney: order.cost,
-				reward: order['reward'],
-				hadEpt: userInfo.hadEpt,
-				jfy_amount: order['jfy_amount'],
-				tyb_amount: order['tyb_amount'],
-				callback: this._encryptPassword //充值
-			},
+			params: params,
       		title: name,
 			component: component
 		});
@@ -583,7 +612,15 @@ class PhoneCurCapView extends Component {
             });
 
             promise.then(function(encryptPasswordStr){
-            	self._flowRecharge(encryptPasswordStr);
+            	
+
+            	if(order['verify'] >= 4){ 
+					//流量包充值
+					self._flowRecharge(encryptPasswordStr);
+				}else{
+					//3G流量卡 
+					self._rechargeResp_g(encryptPasswordStr);
+				}
             });
 		});
 	}
@@ -628,6 +665,77 @@ class PhoneCurCapView extends Component {
 		    if(json['code']==global.RES.SUCCESS){
 		  		//成功
 		  		console.log("充值成功");
+
+		  		//付款详情
+		  		let params = {
+		  			pageType: 'success'
+		  		}
+				this._gotoPage(finishpage, '付款详情', params);
+		    }else if(json['code'] === '009002'){
+
+		    	//付款详情
+		  		let params = {
+		  			pageType: 'accept'
+		  		}
+				this._gotoPage(finishpage, '付款详情', params);
+		    }
+		})
+		.catch(error => {
+		  console.warn(error);
+		}));
+	}
+
+	//3G流量卡
+	_rechargeResp_g(encryptPasswordStr){
+
+		let params = {
+			'staffCode' : ''+staffCode,
+			'userInfo' : userInfo,
+			'orderNo' : reqHttp.getOrderSeq(),
+			'phone' : this.state.phone,
+			'rechargeFlow' : order['flow'],
+			'rechargeType' : '001',
+			'verify' : '01',
+			'payPassword' : encryptPasswordStr, 
+			'systemNO' : order['systemNo'],
+			'tradeTime' : Lang.getDate_YYYYMMDD() + '' + Lang.getTime_HHMMSS(),
+			'txnAmount' : Lang.yuan2fen(order['cost'])
+		};
+
+		if(userInfo.hadEpt == 1){
+			params.costWay = order['costWay']; //0是交费易  1是添益宝
+			params.productId = '0030001';
+			params.userId = order['userId'];
+		}
+
+		requestParams.setCPSServiceParams('TTrdAcc004',params, true, (url,strJson)=> fetch(url, {
+		  method: 'POST',
+		  headers: {
+		    'Accept': 'application/json',
+		    'Content-Type': 'application/json',
+		  },
+		  body: strJson
+		})
+		.then(response => response.text())
+		.then(responseText => {
+		    Alert.alert('Alert Title',responseText,[{text: 'OK', onPress: () => console.log('OK Pressed!')}])
+		    let json = JSON.parse(responseText);
+		    if(json['code']==global.RES.SUCCESS){
+		  		//成功
+		  		console.log("充值成功");
+
+		  		//付款详情
+		  		let params = {
+		  			pageType: 'success'
+		  		}
+				this._gotoPage(finishpage, '付款详情', params);
+		    }else if(json['code'] === '009002'){
+
+		    	//付款详情
+		  		let params = {
+		  			pageType: 'accept'
+		  		}
+				this._gotoPage(finishpage, '付款详情', params);
 		    }
 		})
 		.catch(error => {
@@ -638,6 +746,7 @@ class PhoneCurCapView extends Component {
 	render() {
 		return(
 			<View keyboardShouldPersistTaps={true}>
+				{this._loadingHTML()}
 	            <View style={prCss.input_Wrap}>
 	              	<TextInput style={[prCss.phone_input, prCss.fontsize]}
 	              	    ref="liuliang_input"

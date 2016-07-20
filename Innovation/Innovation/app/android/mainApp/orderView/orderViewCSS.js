@@ -65,7 +65,61 @@ const styles = StyleSheet.create({
   resetMargin:{
     marginLeft:0,
     marginRight:0,
-    marginTop:20
+    marginTop:30
+  },
+  chioseimgWidth:{
+    width:30,
+    height:30,
+  },
+  chioseimgWrap:{
+    height:45,
+    width:55,
+    alignItems:'center'
+  },
+  ImgiconWrap:{
+    height:45,
+    width:28,
+    alignItems:'center' 
+  },
+  Imgicon:{
+    width:20,
+    alignItems:'center',
+    resizeMode:'contain'
+  },
+  payType:{
+    borderColor:'#e5e5e5',
+    borderBottomWidth:1,
+    borderStyle:'solid',
+    paddingTop:8,
+    paddingBottom:8
+  },
+  paytypeWrap:{
+    flexDirection:'column',
+    alignItems: 'center'
+  },
+  payGroupOne:{
+    flex:2,
+    height:45,
+    alignItems:'center'
+  },
+  payGroupTwo:{
+    flex:1,
+    height:45,
+    alignItems:'center'
+  },
+  fontsize16:{
+    fontSize:16
+  },
+  arrowImg:{
+    width:13,
+    flexDirection:'row',
+    resizeMode:'contain',
+    transform:[{rotate: '-90deg'}],
+    marginTop:3,
+    marginLeft:2
+  },
+  marginLeft15:{
+    marginLeft:15
   }
 });
 
